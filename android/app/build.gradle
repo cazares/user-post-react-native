@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+apply from: "../../node_modules/react-native/react.gradle"
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.1"
+    defaultConfig {
+        applicationId "com.cazares.miguel.user_post"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "$rootDir/../node_modules/react-native/android"
+        }
+    }
+}
+
+repositories {
+    jcenter()
+    maven {
+        url "$rootDir/../node_modules/react-native/android"
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.facebook.android:facebook-android-sdk:4.27.0'
+    compile 'com.facebook.react:react-native:+'
+    testCompile 'junit:junit:4.12'
+}
