@@ -9,7 +9,7 @@ android {
         applicationId "com.cazares.miguel.user_post"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 1
+        versionCode 3
         versionName "1.0"
         multiDexEnabled true
         ndk {
@@ -24,7 +24,7 @@ android {
         }
     }
     dexOptions {
-        javaMaxHeapSize "4g"
+        javaMaxHeapSize "8g"
     }
 }
 

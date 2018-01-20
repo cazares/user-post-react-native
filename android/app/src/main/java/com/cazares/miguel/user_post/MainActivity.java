@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
 
     private static String BUNDLE_SUFFIX = ".jsbundle";
     private static final String SEPARATOR = "/";
-    private static boolean DEBUG = true;
+    private static boolean DEBUG = false;
 
     protected String mReactNativeAppName = "";
     protected String mBundleAssetName = "";
