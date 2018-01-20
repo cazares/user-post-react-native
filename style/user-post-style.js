@@ -7,4 +7,8 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  separator: {
+    backgroundColor: SEPARATOR_COLOR,
+    height: 1,
+  },
 });
