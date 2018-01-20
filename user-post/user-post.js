@@ -11,7 +11,8 @@ const USERS_URL = 'users';
 
 export default class UserPost extends React.Component {
   state = {
-    loading: false
+    loading: false,
+    users: null,
   }
 
   componentDidMount() {
@@ -30,7 +31,9 @@ export default class UserPost extends React.Component {
   }
 
   onSuccessUsers = (users) => {
-
+    const userRows = users.map((user) => {
+      return (<)
+    });
   }
 
   onErrorUsers = (error) => {
@@ -46,6 +49,7 @@ export default class UserPost extends React.Component {
     return (
       <LoadingIndicator loading={loading}>
         <SimpleList>
+          {users}
         </SimpleList>
       </LoadingIndicator>
     );
