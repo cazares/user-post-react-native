@@ -17,6 +17,9 @@ export default class SimpleList extends React.Component {
 
   render() {
     const { children, hideRightIndicator, scrollEnabled } = this.props;
+    if (!children) {
+      return null;
+    }
     children.forEach((child) => child.props.hideRightIndicator = hideRightIndicator);
     const data = children.map((child) => child.props);
     return (

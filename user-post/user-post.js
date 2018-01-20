@@ -2,7 +2,8 @@ import React from 'react';
 import { Text, View, AppRegistry } from 'react-native';
 
 import style from '../style/user-post-style';
-import SimpleList from '../util/simple-list';
+import SimpleList from '../shared/simple-list';
+import UserRow from '../shared/user-row';
 
 import { LoadingIndicator } from '../util/loading-util';
 import { requestHandlerForMethod } from '../util/api';
@@ -12,7 +13,7 @@ const USERS_URL = 'users';
 export default class UserPost extends React.Component {
   state = {
     loading: false,
-    users: null,
+    userRows: null,
   }
 
   componentDidMount() {
@@ -31,9 +32,8 @@ export default class UserPost extends React.Component {
   }
 
   onSuccessUsers = (users) => {
-    const userRows = users.map((user) => {
-      return (<)
-    });
+    const userRows = users.map(user => (<UserRow user={user} />));
+    this.setState({ userRows });
   }
 
   onErrorUsers = (error) => {
@@ -45,11 +45,11 @@ export default class UserPost extends React.Component {
   }
 
   render() {
-    const { loading } = this.state;
+    const { loading, userRows } = this.state;
     return (
       <LoadingIndicator loading={loading}>
         <SimpleList>
-          {users}
+          {userRows}
         </SimpleList>
       </LoadingIndicator>
     );

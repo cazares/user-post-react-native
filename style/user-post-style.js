@@ -4,7 +4,7 @@ const USER_ROW_HEIGHT = 100;
 
 export default StyleSheet.create({
   separator: {
-    backgroundColor: SEPARATOR_COLOR,
+    backgroundColor: '#E0E0E0',
     height: 1,
   },
   columns: {
