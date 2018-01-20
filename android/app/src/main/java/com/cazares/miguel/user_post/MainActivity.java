@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
 
     protected Bundle mBundle = new Bundle();
 
-    private static final String AUTH_TOKEN_KEY = "authToken";
     private static String BUNDLE_SUFFIX = ".jsbundle";
     private static final String SEPARATOR = "/";
     private static boolean DEBUG = true;
@@ -61,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
     protected void finishOnCreate() {
         mReactRootView = new ReactRootView(this);
         mReactRootView.setBackgroundColor(getResources().getColor(R.color.default_background));
+        setAppName("UserPost");
+
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
                 .setBundleAssetName(mBundleAssetName)
@@ -70,7 +71,6 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
 
-        setAppName("UserPost");
         mReactRootView.startReactApplication(mReactInstanceManager, mReactNativeAppName, mBundle);
         setContentView(mReactRootView);
     }
