@@ -1,7 +1,7 @@
 import { prettyPrint } from './logging';
 
 function fullUrl(url) {
-  const entireUrl = 'https://mobile-code-test.ifactornotifi.com/json';
+  const entireUrl = `https://mobile-code-test.ifactornotifi.com/json/${url}`;
   return entireUrl;
 }
 
@@ -27,7 +27,10 @@ export function requestHandlerForMethod(props) {
 
   return fetchWithMethod(props).then((response) => {
     onLoading(false);
-    onSuccess(response.json());
+    return response.json();
+  }).then((responseJson) => {
+    console.log(`responseJson: ${prettyPrint(responseJson)}`);
+    onSuccess(responseJson);
   }).catch((error) => {
     onLoading(false);
     onError(error);

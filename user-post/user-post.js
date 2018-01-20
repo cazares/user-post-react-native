@@ -4,6 +4,7 @@ import { Text, View, AppRegistry } from 'react-native';
 import style from '../style/user-post-style';
 import SimpleList from '../shared/simple-list';
 import UserRow from '../shared/user-row';
+import { prettyPrint } from '../util/logging';
 
 import { LoadingIndicator } from '../util/loading-util';
 import { requestHandlerForMethod } from '../util/api';
@@ -32,12 +33,13 @@ export default class UserPost extends React.Component {
   }
 
   onSuccessUsers = (users) => {
+    console.log(`users from server: ${prettyPrint(users)}`);
     const userRows = users.map(user => (<UserRow user={user} />));
     this.setState({ userRows });
   }
 
   onErrorUsers = (error) => {
-    console.warn(error);
+    console.error(error);
   }
 
   onLoadingUsers = (loading) => {

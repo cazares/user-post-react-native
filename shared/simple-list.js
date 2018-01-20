@@ -16,16 +16,14 @@ export default class SimpleList extends React.Component {
   }
 
   render() {
-    const { children, hideRightIndicator, scrollEnabled } = this.props;
+    const { children } = this.props;
     if (!children) {
       return null;
     }
-    children.forEach((child) => child.props.hideRightIndicator = hideRightIndicator);
-    const data = children.map((child) => child.props);
+    const data = children.map(child => child.props);
     return (
       <FlatList
         data={data}
-        scrollEnabled
         renderItem={(item) => this.renderItem(children[item.index])}
         ItemSeparatorComponent={() => <View style={style.separator} />} />
     );

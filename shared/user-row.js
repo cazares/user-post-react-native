@@ -6,7 +6,7 @@ import ReactNative, {
 } from 'react-native';
 import style from '../style/user-post-style';
 
-export default class RegularRow extends React.Component {
+export default class UserRow extends React.Component {
   render() {
     const { user } = this.props;
     return (
