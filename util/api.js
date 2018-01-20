@@ -30,7 +30,6 @@ export function requestHandlerForMethod(props) {
     onSuccess(response.json());
   }).catch((error) => {
     onLoading(false);
-    console.log(error);
     onError(error);
   });
 }
