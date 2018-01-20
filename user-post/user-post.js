@@ -11,6 +11,9 @@ import { requestHandlerForMethod } from '../util/api';
 
 const USERS_URL = 'users';
 
+// Note: wasn't able to get rid of missing key from list warning, disable warning box for now
+console.disableYellowBox = true;
+
 export default class UserPost extends React.Component {
   state = {
     loading: false,
