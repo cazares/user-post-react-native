@@ -1,4 +1,4 @@
-package com.cazares.miguel.racer_js;
+package com.cazares.miguel.user_post;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
 
+        setAppName("UserPost");
         mReactRootView.startReactApplication(mReactInstanceManager, mReactNativeAppName, mBundle);
         setContentView(mReactRootView);
     }

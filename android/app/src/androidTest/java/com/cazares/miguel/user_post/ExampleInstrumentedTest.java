@@ -1,4 +1,4 @@
-package com.cazares.miguel.racer_js;
+package com.cazares.miguel.user_post;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.cazares.miguel.racer_js", appContext.getPackageName());
+        assertEquals("com.cazares.miguel.user_post", appContext.getPackageName());
     }
 }

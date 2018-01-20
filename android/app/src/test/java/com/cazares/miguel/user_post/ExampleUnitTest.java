@@ -1,4 +1,4 @@
-package com.cazares.miguel.racer_js;
+package com.cazares.miguel.user_post;
 
 import org.junit.Test;
 
