@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -38,11 +39,17 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        hideActionBar();
+
         if (DEBUG) {
             BUNDLE_SUFFIX = ".bundle";
         }
 
         checkPermissions();
+    }
+
+    protected void hideActionBar() {
+        getSupportActionBar().hide();
     }
 
     protected void setAppName(String appName) {

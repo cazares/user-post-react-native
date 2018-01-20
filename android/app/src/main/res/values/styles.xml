@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/actionbar_color</item>
         <item name="colorPrimaryDark">@color/actionbar_color</item>
         <item name="colorAccent">@color/white</item>
+
     </style>
 
 </resources>

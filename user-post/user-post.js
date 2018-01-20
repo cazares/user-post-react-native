@@ -15,7 +15,22 @@ const USERS_URL = 'users';
 // Note: wasn't able to get rid of missing key from list warning, disable warning box for now
 console.disableYellowBox = true;
 
+const commonNavOptions = {
+  headerTintColor: 'white',
+  headerBackTitle: null,
+  headerStyle: {
+    backgroundColor: '#CE1129',
+  },
+};
+
 export default class UserPost extends React.Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      ...commonNavOptions,
+      title: 'Users',
+    };
+  }
+
   state = {
     loading: false,
     userRows: null,
@@ -72,4 +87,4 @@ class UserPostNavWrapper extends React.Component {
   }
 }
 
-AppRegistry.registerComponent('UserPost', () => UserPost);
+AppRegistry.registerComponent('UserPost', () => UserPostNavWrapper);
