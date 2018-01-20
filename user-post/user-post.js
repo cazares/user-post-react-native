@@ -8,6 +8,7 @@ import { prettyPrint } from '../util/logging';
 
 import { LoadingIndicator } from '../util/loading-util';
 import { requestHandlerForMethod } from '../util/api';
+import { StackNavigator, NavigationActions } from 'react-navigation';
 
 const USERS_URL = 'users';
 
@@ -58,6 +59,16 @@ export default class UserPost extends React.Component {
         </SimpleList>
       </LoadingIndicator>
     );
+  }
+}
+
+export const UserPostNav = StackNavigator({
+  UserPost: { screen: UserPost },
+});
+
+class UserPostNavWrapper extends React.Component {
+  render() {
+    return <UserPostNav screenProps={this.props} />
   }
 }
 
