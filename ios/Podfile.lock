@@ -2,33 +2,33 @@ PODS:
   - LionheartExtensions (3.6.0):
     - LionheartExtensions/Core (= 3.6.0)
   - LionheartExtensions/Core (3.6.0)
-  - React/BatchedBridge (0.50.3):
+  - React/BatchedBridge (0.49.5):
     - React/Core
     - React/cxxreact_legacy
-  - React/Core (0.50.3):
-    - yoga (= 0.50.3.React)
-  - React/cxxreact_legacy (0.50.3):
+  - React/Core (0.49.5):
+    - yoga (= 0.49.5.React)
+  - React/cxxreact_legacy (0.49.5):
     - React/jschelpers_legacy
-  - React/fishhook (0.50.3)
-  - React/jschelpers_legacy (0.50.3)
-  - React/RCTAnimation (0.50.3):
+  - React/fishhook (0.49.5)
+  - React/jschelpers_legacy (0.49.5)
+  - React/RCTAnimation (0.49.5):
     - React/Core
-  - React/RCTBlob (0.50.3):
+  - React/RCTBlob (0.49.5):
     - React/Core
-  - React/RCTImage (0.50.3):
+  - React/RCTImage (0.49.5):
     - React/Core
     - React/RCTNetwork
-  - React/RCTLinkingIOS (0.50.3):
+  - React/RCTLinkingIOS (0.49.5):
     - React/Core
-  - React/RCTNetwork (0.50.3):
+  - React/RCTNetwork (0.49.5):
     - React/Core
-  - React/RCTText (0.50.3):
+  - React/RCTText (0.49.5):
     - React/Core
-  - React/RCTWebSocket (0.50.3):
+  - React/RCTWebSocket (0.49.5):
     - React/Core
     - React/fishhook
     - React/RCTBlob
-  - yoga (0.50.3.React)
+  - yoga (0.49.5.React)
 
 DEPENDENCIES:
   - LionheartExtensions
@@ -50,8 +50,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   LionheartExtensions: f1634455ebcef5c5df5f10b9be22eadb112fa98f
-  React: 0ba6cae888dc82dc47d6d5f3090615e1b5f6f3e7
-  yoga: faecc6be81ca7823ccbb470b93a1b228499fa1c0
+  React: 9d5a23842dcc75ffef540ee2d2ef0eee1904ee58
+  yoga: 596e987aa8aac0165abb235d2977982f090476a0
 
 PODFILE CHECKSUM: 6ca6e171bc251ac69da79cf61abbd6545bcea56a
 

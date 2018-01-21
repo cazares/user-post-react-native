@@ -6,7 +6,7 @@ export const Spinner = () => (
     animating
     style={{ flex: 1 }}
     size="large"
-    color={"#a9a9a9"}
+    color={"#A9A9A9"}
   />
 );
 

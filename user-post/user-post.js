@@ -1,16 +1,19 @@
 import React from 'react';
-import { Text, View, AppRegistry } from 'react-native';
+import { Text, View, AppRegistry, Picker } from 'react-native';
 
 import style from '../style/user-post-style';
 import SimpleList from '../shared/simple-list';
 import UserRow from '../shared/user-row';
+import NavButton from '../util/ui';
 import { prettyPrint } from '../util/logging';
 
 import { LoadingIndicator } from '../util/loading-util';
 import { requestHandlerForMethod } from '../util/api';
-import { StackNavigator, NavigationActions } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 
 const USERS_URL = 'users';
+const SORT_TITLE = 'Sort';
+const NAV_TITLE = 'Users';
 
 // Note: wasn't able to get rid of missing key from list warning, disable warning box for now
 console.disableYellowBox = true;
@@ -23,11 +26,14 @@ const commonNavOptions = {
   },
 };
 
-export default class UserPost extends React.Component {
+export default class UserList extends React.Component {
   static navigationOptions = ({ navigation }) => {
+    const { state } = navigation;
+    const params = state.params || {};
     return {
       ...commonNavOptions,
-      title: 'Users',
+      title: NAV_TITLE,
+      // headerRight: <NavButton text={SORT_TITLE} onPress={params.onSortPressed} />,
     };
   }
 
@@ -37,7 +43,18 @@ export default class UserPost extends React.Component {
   }
 
   componentDidMount() {
+    const { navigation } = this.props;
+
+    const params = {
+      onSortPressed: this.onSortPressed,
+    };
+    navigation.setParams(params);
+
     this.loadUsers();
+  }
+
+  onSortPressed = () => {
+
   }
 
   loadUsers = () => {
@@ -51,9 +68,15 @@ export default class UserPost extends React.Component {
     requestHandlerForMethod(props);
   }
 
+  onUserPress = (user) => {
+    
+  }
+
   onSuccessUsers = (users) => {
     console.log(`users from server: ${prettyPrint(users)}`);
-    const userRows = users.map(user => (<UserRow user={user} />));
+    const userRows = users.map(user => (
+      <UserRow user={user} onPress={() => this.onUserPress(user)} />
+    ));
     this.setState({ userRows });
   }
 
@@ -78,7 +101,7 @@ export default class UserPost extends React.Component {
 }
 
 export const UserPostNav = StackNavigator({
-  UserPost: { screen: UserPost },
+  UserList: { screen: UserList },
 });
 
 class UserPostNavWrapper extends React.Component {
