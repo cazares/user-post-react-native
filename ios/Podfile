@@ -1,0 +1,23 @@
+platform :ios, '10.0'
+
+inhibit_all_warnings!
+
+def shared_pods
+	pod 'LionheartExtensions'
+	use_frameworks!
+end
+
+target 'UserPost' do
+	shared_pods
+	pod 'React', :path => '../node_modules/react-native', :subspecs => [
+                'Core',
+                'RCTImage',
+                'RCTNetwork',
+                'RCTText',
+                'RCTWebSocket',
+                'BatchedBridge',
+                'RCTLinkingIOS',
+                'RCTAnimation'
+        ]
+	pod 'yoga', :path => './../node_modules/react-native/ReactCommon/yoga/yoga.podspec'
+end
