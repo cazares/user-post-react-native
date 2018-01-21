@@ -5,7 +5,9 @@ const USER_ROW_LINE_HEIGHT = 20;
 const USER_ROW_TITLE_HEIGHT = 35;
 const DEFAULT_FONT_SIZE = 16;
 const WHITE = 'white';
-const DEFAULT_NAV_PADDING = 15;
+const DEFAULT_PADDING = 15;
+
+const POST_ROW_HEIGHT = 100;
 
 export default StyleSheet.create({
   separator: {
@@ -19,6 +21,13 @@ export default StyleSheet.create({
   userRowWrapper: {
     backgroundColor: WHITE,
     height: USER_ROW_HEIGHT,
+  },
+  postRowWrapper: {
+    backgroundColor: WHITE,
+    height: POST_ROW_HEIGHT,
+  },
+  postBody: {
+    marginTop: DEFAULT_PADDING,
   },
   listTitle: {
     fontSize: 24,
@@ -38,7 +47,7 @@ export default StyleSheet.create({
   navButton: {
     fontSize: DEFAULT_FONT_SIZE,
     color: WHITE,
-    paddingLeft: DEFAULT_NAV_PADDING,
-    paddingRight: DEFAULT_NAV_PADDING,
+    paddingLeft: DEFAULT_PADDING,
+    paddingRight: DEFAULT_PADDING,
   }
 });

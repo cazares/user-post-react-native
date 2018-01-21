@@ -1,9 +1,5 @@
 import React from 'react';
-import ReactNative, {
-  Text,
-  View,
-  Image,
-} from 'react-native';
+import ReactNative, { Text, View } from 'react-native';
 import style from '../style/user-post-style';
 
 export default class UserRow extends React.Component {
