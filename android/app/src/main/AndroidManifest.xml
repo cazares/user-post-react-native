@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.cazares.miguel.user_post">
 
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" tools:node="remove"/>
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE"
+        tools:node="remove" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +19,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".UserPostActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cazares.miguel.user_post.MainActivity" />
         </activity>
     </application>
 
