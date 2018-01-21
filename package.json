@@ -10,8 +10,8 @@
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "eject": "node node_modules/react-native/local-cli/cli.js eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js --watch"
