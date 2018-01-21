@@ -23,8 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.statusBarStyle = .lightContent
         
         let mainViewController = UserPostViewController()
-        let navController = UINavigationController(rootViewController: mainViewController)
-        window?.rootViewController = navController
+        window?.rootViewController = mainViewController
         window?.makeKeyAndVisible()
         
         return true
