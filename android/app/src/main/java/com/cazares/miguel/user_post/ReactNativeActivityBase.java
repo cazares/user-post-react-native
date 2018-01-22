@@ -16,7 +16,6 @@ import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
-import com.slowpath.actionsheet.ActionSheetPackage;
 
 /**
  * Created by Miguel Cazares on 1/20/18.
@@ -75,7 +74,6 @@ public class ReactNativeActivityBase extends AppCompatActivity implements Defaul
                 .setBundleAssetName(mBundleAssetName)
                 .setJSMainModulePath(mMainModuleName)
                 .addPackage(new MainReactPackage())
-                .addPackage(new ActionSheetPackage())
                 .setUseDeveloperSupport(DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
