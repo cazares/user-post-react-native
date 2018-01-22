@@ -23,22 +23,30 @@ export default class PostList extends React.Component {
     loading: false,
   }
 
-  componentDidFocus() {
+  componentDidMount() {
+    console.log('didmount called in post-list');
     this.loadPosts();
+  }
+
+  componentDidUpdate() {
+    console.log('didupdate called in post-list');
+  }
+
+  componentWillUpdate() {
+    console.log('componentWillUpdate called in post-list');
   }
 
   loadPosts = () => {
     const { userId } = this.props.navigation.state.params;
-    const params = { userId };
-    const url = `${POSTS_URL}?${JSON.stringify(params)}`;
+    const url = `${POSTS_URL}?userId=${userId}`;
     const props = {
       method: `GET`,
-      params,
       url,
       onSuccess: this.onSuccessPosts,
       onError: this.onErrorPosts,
       onLoading: this.onLoadingPosts,
     }
+    console.log(`loadPosts props: ${prettyPrint(props)}`);
     requestHandlerForMethod(props);
   }
 
