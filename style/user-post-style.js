@@ -6,8 +6,11 @@ const USER_ROW_TITLE_HEIGHT = 35;
 const DEFAULT_FONT_SIZE = 16;
 const WHITE = 'white';
 const DEFAULT_PADDING = 15;
+const DEFAULT_MARGIN = 10;
 
 const POST_ROW_HEIGHT = 100;
+const INPUT_BORDER_COLOR = '#D3D3D3';
+const INPUT_RADIUS = 4;
 
 export default StyleSheet.create({
   separator: {
@@ -49,5 +52,23 @@ export default StyleSheet.create({
     color: WHITE,
     paddingLeft: DEFAULT_PADDING,
     paddingRight: DEFAULT_PADDING,
-  }
+  },
+  defaultLabel: {
+    fontSize: DEFAULT_FONT_SIZE,
+    margin: DEFAULT_PADDING,
+  },
+  postInput: {
+    margin: DEFAULT_PADDING,
+    marginTop: 0,
+    borderWidth: 1,
+    borderColor: INPUT_BORDER_COLOR,
+    backgroundColor: WHITE,
+    borderRadius: INPUT_RADIUS,
+    textAlignVertical: 'top',
+    padding: DEFAULT_MARGIN,
+    paddingVertical: DEFAULT_MARGIN,
+  },
+  postBodyInput: {
+    flex: 1,
+  },
 });

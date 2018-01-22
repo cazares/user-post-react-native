@@ -51,7 +51,8 @@ export default class PostList extends React.Component {
   }
 
   onPostPress = (post) => {
-
+    const { navigate } = this.props.navigation;
+    navigate('ModifyPost', { post });
   }
 
   onSuccessPosts = (posts) => {
