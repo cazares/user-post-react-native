@@ -9,8 +9,8 @@ android {
         applicationId "com.cazares.miguel.user_post"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 3
-        versionName "1.0"
+        versionCode 5
+        versionName "1.1"
         multiDexEnabled true
         ndk {
             abiFilters "armeabi-v7a", "x86"
