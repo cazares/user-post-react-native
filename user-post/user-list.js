@@ -2,13 +2,13 @@ import React from 'react';
 import { Text, View } from 'react-native';
 
 import style from '../style/user-post-style';
-import SimpleList from '../shared/simple-list';
 import UserRow from '../shared/user-row';
 import NavButton from '../util/ui';
 import { prettyPrint } from '../util/logging';
 
-import { LoadingIndicator } from '../util/loading-util';
 import { requestHandlerForMethod } from '../util/api';
+import SimpleList from '../shared/simple-list';
+import { LoadingIndicator } from '../util/loading-util';
 
 const USERS_URL = 'users';
 const SORT_TITLE = 'Sort';
@@ -19,7 +19,7 @@ export default class UserList extends React.Component {
     const { state } = navigation;
     const params = state.params || {};
     return {
-      ...commonNavOptions,
+      // ...commonNavOptions,
       title: NAV_TITLE,
       // headerRight: <NavButton text={SORT_TITLE} onPress={params.onSortPressed} />,
     };
@@ -57,13 +57,15 @@ export default class UserList extends React.Component {
   }
 
   onUserPress = (user) => {
-    
+    const { navigate } = this.props.navigation;
+    navigate('PostList', { userId: user.id });
   }
 
   onSuccessUsers = (users) => {
     console.log(`users from server: ${prettyPrint(users)}`);
     const userRows = users.map(user => (
-      <UserRow user={user} onPress={() => this.onUserPress(user)} />
+      <UserRow
+        user={user} onPress={() => this.onUserPress(user)} />
     ));
     this.setState({ userRows });
   }
