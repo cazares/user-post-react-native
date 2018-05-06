@@ -42,17 +42,21 @@ DEPENDENCIES:
   - React/RCTWebSocket (from `../node_modules/react-native`)
   - yoga (from `./../node_modules/react-native/ReactCommon/yoga/yoga.podspec`)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - LionheartExtensions
+
 EXTERNAL SOURCES:
   React:
-    :path: ../node_modules/react-native
+    :path: "../node_modules/react-native"
   yoga:
-    :path: ./../node_modules/react-native/ReactCommon/yoga/yoga.podspec
+    :path: "./../node_modules/react-native/ReactCommon/yoga/yoga.podspec"
 
 SPEC CHECKSUMS:
   LionheartExtensions: f1634455ebcef5c5df5f10b9be22eadb112fa98f
-  React: 9d5a23842dcc75ffef540ee2d2ef0eee1904ee58
-  yoga: 596e987aa8aac0165abb235d2977982f090476a0
+  React: bfd693e2d08a61bf1dc056bba3f5c01a13a3cc31
+  yoga: f164f2e34afd3e014409f27c51e36b8bc37c4f24
 
 PODFILE CHECKSUM: 6ca6e171bc251ac69da79cf61abbd6545bcea56a
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0
